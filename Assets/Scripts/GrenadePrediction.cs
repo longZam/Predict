@@ -53,7 +53,7 @@ namespace Sample
                 // 예측 성공
                 if (Physics.SphereCast(ray, radius, out RaycastHit hitInfo, delta.magnitude))
                 {
-                    vertices.Add(hitInfo.point); // 충돌 위치 추가
+                    vertices.Add(hitInfo.point + hitInfo.normal * radius); // 충돌 위치 추가
                     return true;
                 }
 
